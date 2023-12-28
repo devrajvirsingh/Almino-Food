@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*,
+*::after,
+*::before{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ############### utility classes ############### */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 2em;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 1em;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-primary{
+    color: #fff;
+    background: #1680a3;
+}
+
+
+
+/* ################# navbar ############### */
+
+/* ############# for desktop ########## */ 
+.hamburger-lines{
+    order: 3;
+    display: none;
+}
+.line{
+    border: 2px solid black;
+    height: 3px;
+    width: 30px;
+    display: block;
+    background-color: #000;
+    border-radius: 20px;
+    margin: 5px;
+}
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    opacity: 0.85;
+    background: #fff;
+    color: #000;
+}
+.nav-flex{
+    display: flex;
+    gap: 180px;
+    align-items: center;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 64px;
+}
+
+.navbar h1{
+    order: 1;
+    font-size: 3rem
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    
+}
+.navbar a{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+
+/* ################### showcase section ################### */
+
+.showcase{
+    height: 50vh;
+    background: linear-gradient(rgba(240,240,240,0.144) ,rgba(255,255,255,0.226)),url('./img/header-image2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+}
+
+.showcase-container h1{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.showcase-container p{
+    font-weight: 300;
+    padding: 20px;
+}
+
+/* ###################### about section ############### */
+
+#about-page{
+    padding: 50px 0;
+    background: #f5f5f7;
+}
+
+#about-page h2{
+    font-size: 3.2rem;
+
+}
+
+#about-page p{
+    font-size: 1.6rem;
+    color: #555;
+}
+
+#about-page .small{
+    font-size: 1.6rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.about-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-img{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: image-animation 1s ease-in-out forwards;
+}
+
+@keyframes image-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+
+.about-text{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+
+    transform: translateX(-150%);
+    animation: image-animation 1s ease-in-out forwards;
+}
+
+@keyframes image-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+
+.about-img img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+}
+
+/* ###################### food categories ####################### */
+
+#category{
+    padding: 5rem 0 10rem 0;
+}
+
+#category h2{
+    text-align: center;
+    font-weight: 400;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #555;
+
+}
+
+.food-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-container img{
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.img-container{
+    margin: 0 1rem;
+    position: relative;
+}
+
+.img-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 2;
+    opacity: 0;
+}
+.img-content h3{
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.img-content a{
+    font-size: 1.3rem;
+    background: none ;
+}
+.img-content a:hover{
+    color: red;
+}
+
+.img-container::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0,0.847);
+    opacity: 0;
+
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.img-container:hover .img-content{
+    opacity: 1;
+}
+
+
+
+/* ################## food menu ################# */
+
+.food-menu-heading{
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: 400;
+}
+
+.food-menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+
+.food-menu-container img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.food-menu-items{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+.food-description{
+    margin: auto 1.5rem;
+}
+
+.food-title , .food-price{
+    text-transform: uppercase;
+    color: #1680a3;
+    font-weight: 700;
+
+}
+.food-price:hover{
+    cursor: pointer;
+    color: red;
+    border-bottom: 1px solid red;
+    width: max-content;
+}
+
+/* ################# testimonial ############# */
+
+#testimonial-page{
+    padding: 5rem 0rem;
+    background: #efebeb;
+}
+
+.testimonial-title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #666;
+} 
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+.testimonial-container .checked{
+    color: orange;
+}
+
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+
+.customer-description img{
+    height: 100px;
+    width: 100px;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: 1rem auto;
+    
+}
+
+.customer-description h3{
+    color: #444;
+    text-transform: uppercase;
+
+}
+
+
+/* ################### contact us ################ */
+
+#contact-page{
+    padding: 5rem 0;
+    background: #d5d5d9;
+}
+
+.contact-container{
+    display: flex;
+    background: #fff;
+}
+
+.contact-img{
+    width: 50%;
+}
+
+.contact-img img{
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.form-container{
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+
+.form-container input , textarea{
+    display: block;
+    width: 100%;
+    box-shadow: none;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    margin-bottom: 1rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.form-container button{
+    margin:auto ;
+    
+    display: block;
+}
+
+.form-container h2{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+
+}
+
+/* ############# footer ############# */
+
+
+#footer{
+    height: 100px;
+    background: rgb(65,65,65);
+}
+#footer h2{
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 2rem;
+}
+
+@media (max-width:900px){
+    .menu-items{
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-items li{
+        margin: 10px 0;
+    }
+    .hamburger-lines{
+        display: block;
+        position: fixed;
+        left: 90%;
+        top: 20px;
+    }
+    .navbar-container{
+        justify-content: space-between;
+    
+    }
+    .nav-flex{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-items{
+        flex-direction: column;
+        display: none;
+    }
+    .v-class{
+        display: block;
+    }
+}
